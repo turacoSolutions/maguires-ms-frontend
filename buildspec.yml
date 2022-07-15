@@ -20,7 +20,7 @@ phases:
 artifacts:
     files:
         - '**/*'
-    base-directory: 'dist'
+    base-directory: dist*
     # discard-paths: yes
 
     # This build script worked from this tutorial::: https://www.youtube.com/watch?v=i8NyeqSc4GI
