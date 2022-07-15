@@ -21,7 +21,7 @@ phases:
         - ls -l -F
 artifacts:
     files:
-        - '/'
+        - '**/*'
     base-directory: 'dist*'
     # discard-paths: yes
 
