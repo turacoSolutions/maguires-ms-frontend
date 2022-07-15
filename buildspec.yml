@@ -3,8 +3,8 @@ version: 0.2
 # env:
 #     variables:
         # CACHE_CONTROL: "86400"
-        # S3_BUCKET: "{{s3_bucket_url}}"
-        # BUILD_FOLDER: "dist"
+        S3_BUCKET: "{{s3_bucket_url}}"
+        BUILD_FOLDER: "dist"
 phases:
   install:
     runtime-versions:
@@ -21,8 +21,8 @@ phases:
         - ls -l -F
 artifacts:
     files:
-        - '**/*'
-    base-directory: dist/maguires-ms
+        - '/'
+    base-directory: "dist"
     discard-paths: no
 
     # This build script worked from this tutorial::: https://www.youtube.com/watch?v=i8NyeqSc4GI
