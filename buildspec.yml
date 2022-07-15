@@ -13,14 +13,16 @@ phases:
         - echo Installing source NPM dependencies...
         - npm install
         - npm install -g @angular/cli
+        - rm package-lock.json
   build:
     commands:
         - echo Build started 
         - ng build
+        - ls -l -F
 artifacts:
     files:
-        - '**/*'
-    base-directory: 'dist'
+        - '/'
+    base-directory: 'dist*'
     # discard-paths: yes
 
     # This build script worked from this tutorial::: https://www.youtube.com/watch?v=i8NyeqSc4GI
