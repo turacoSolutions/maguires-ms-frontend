@@ -11,8 +11,8 @@ phases:
         nodejs: 14
     commands:
         - echo Installing source NPM dependencies...
-        - npm install
-        - npm install -g @angular/cli
+        - npm install -g @angular
+        - npm install -y npm@latest
   build:
     commands:
         - echo Build started 
@@ -21,7 +21,7 @@ artifacts:
     files:
         - '**/*'
     base-directory: 'dist*'
-    # discard-paths: yes
+    discard-paths: yes
 
     # This build script worked from this tutorial::: https://www.youtube.com/watch?v=i8NyeqSc4GI
 
