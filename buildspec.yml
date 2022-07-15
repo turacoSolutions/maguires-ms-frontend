@@ -22,9 +22,8 @@ phases:
 artifacts:
     files:
         - '**/*'
-    base-directory: 'dist*'
-    discard-paths: no
     base-directory: dist/maguires-ms
+    discard-paths: no
 
     # This build script worked from this tutorial::: https://www.youtube.com/watch?v=i8NyeqSc4GI
 
