@@ -7,8 +7,7 @@ import { compactNavigation, defaultNavigation, futuristicNavigation, horizontalN
 @Injectable({
     providedIn: 'root'
 })
-export class NavigationMockApi
-{
+export class NavigationMockApi {
     private readonly _compactNavigation: FuseNavigationItem[] = compactNavigation;
     private readonly _defaultNavigation: FuseNavigationItem[] = defaultNavigation;
     private readonly _futuristicNavigation: FuseNavigationItem[] = futuristicNavigation;
@@ -17,8 +16,7 @@ export class NavigationMockApi
     /**
      * Constructor
      */
-    constructor(private _fuseMockApiService: FuseMockApiService)
-    {
+    constructor(private _fuseMockApiService: FuseMockApiService) {
         // Register Mock API handlers
         this.registerHandlers();
     }
@@ -30,8 +28,7 @@ export class NavigationMockApi
     /**
      * Register Mock API handlers
      */
-    registerHandlers(): void
-    {
+    registerHandlers(): void {
         // -----------------------------------------------------------------------------------------------------
         // @ Navigation - GET
         // -----------------------------------------------------------------------------------------------------
@@ -42,8 +39,7 @@ export class NavigationMockApi
                 // Fill compact navigation children using the default navigation
                 this._compactNavigation.forEach((compactNavItem) => {
                     this._defaultNavigation.forEach((defaultNavItem) => {
-                        if ( defaultNavItem.id === compactNavItem.id )
-                        {
+                        if (defaultNavItem.id === compactNavItem.id) {
                             compactNavItem.children = cloneDeep(defaultNavItem.children);
                         }
                     });
@@ -52,8 +48,7 @@ export class NavigationMockApi
                 // Fill futuristic navigation children using the default navigation
                 this._futuristicNavigation.forEach((futuristicNavItem) => {
                     this._defaultNavigation.forEach((defaultNavItem) => {
-                        if ( defaultNavItem.id === futuristicNavItem.id )
-                        {
+                        if (defaultNavItem.id === futuristicNavItem.id) {
                             futuristicNavItem.children = cloneDeep(defaultNavItem.children);
                         }
                     });
@@ -62,8 +57,7 @@ export class NavigationMockApi
                 // Fill horizontal navigation children using the default navigation
                 this._horizontalNavigation.forEach((horizontalNavItem) => {
                     this._defaultNavigation.forEach((defaultNavItem) => {
-                        if ( defaultNavItem.id === horizontalNavItem.id )
-                        {
+                        if (defaultNavItem.id === horizontalNavItem.id) {
                             horizontalNavItem.children = cloneDeep(defaultNavItem.children);
                         }
                     });
@@ -73,8 +67,8 @@ export class NavigationMockApi
                 return [
                     200,
                     {
-                        compact   : cloneDeep(this._compactNavigation),
-                        default   : cloneDeep(this._defaultNavigation),
+                        compact: cloneDeep(this._compactNavigation),
+                        default: cloneDeep(this._defaultNavigation),
                         futuristic: cloneDeep(this._futuristicNavigation),
                         horizontal: cloneDeep(this._horizontalNavigation)
                     }
