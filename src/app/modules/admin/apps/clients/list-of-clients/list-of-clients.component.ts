@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Client } from '../client';
-import { ClientServiceService } from '../services/client.service';
+import { ClientService } from '../services/client.service';
 
 @Component({
   selector: 'app-list-of-clients',
@@ -11,7 +11,7 @@ export class ListOfClientsComponent implements OnInit {
 
   public clients: Client[] = [];
 
-  constructor(private clientServices: ClientServiceService) { }
+  constructor(private clientServices: ClientService) { }
 
   ngOnInit(): void {
     this.getAllClients();
