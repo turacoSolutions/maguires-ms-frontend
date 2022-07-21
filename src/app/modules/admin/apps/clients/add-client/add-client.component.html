@@ -5,8 +5,8 @@
 
         <!-- Section -->
         <div class="w-full">
-            <div class="text-xl">Personal Information</div>
-            <div class="text-secondary">Only name is required and needs to be unique</div>
+            <div class="text-xl">Client Information</div>
+            <div class="text-secondary">A unique name is required</div>
         </div>
         <div class="grid sm:grid-cols-4 gap-6 w-full mt-8">
 
@@ -51,10 +51,11 @@
 
         <!-- Actions -->
         <div class="flex items-center justify-end">
-            <button mat-stroked-button type="button">
-                Cancel
+            <button class="mr-4" mat-flat-button type="submit" [color]="'primary'">Submit
             </button>
-            <button class="ml-4" mat-flat-button type="submit" [color]="'primary'">Save
+
+            <button mat-flat-button type="button" [color]="'warn'" (click)="cancel()">
+                Cancel
             </button>
         </div>
     </form>
