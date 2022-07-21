@@ -62,5 +62,8 @@ export class AddClientComponent implements OnInit {
     })
 
   }
+  cancel() {
+    this.addClientForm.reset();
+  }
 
 }
