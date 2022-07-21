@@ -48,19 +48,19 @@ export const defaultNavigation: FuseNavigationItem[] = [
         icon: 'heroicons_outline:user-group',
         children: [
             {
-                id: 'clients.view',
-                title: 'View',
+                id: 'clients.list',
+                title: 'List',
                 type: 'basic',
                 icon: 'heroicons_outline:academic-cap',
-                link: '/apps/clients/view-all'
+                link: '/apps/clients/list'
             },
-            {
-                id: 'clients.add',
-                title: 'Add',
-                type: 'basic',
-                icon: 'heroicons_outline:user-circle',
-                link: '/apps/clients/add'
-            },
+            // {
+            //     id: 'clients.add',
+            //     title: 'Add',
+            //     type: 'basic',
+            //     icon: 'heroicons_outline:user-circle',
+            //     link: '/apps/clients/add'
+            // },
             {
                 id: 'clients.edit',
                 title: 'Edit',
