@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDrawer } from '@angular/material/sidenav';
-import { Client } from '@bugsnag/js';
+import { Client } from '../client';
 import { ClientServiceService } from '../services/client.service';
+
 @Component({
   selector: 'app-list-of-clients',
   templateUrl: './list-of-clients.component.html',
