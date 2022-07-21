@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { MatDrawer } from '@angular/material/sidenav';
 
 import { FuseMediaWatcherService } from '@fuse/services/media-watcher';
@@ -15,44 +16,52 @@ export class ClientsComponent implements OnInit {
   drawerMode: 'over' | 'side' = 'side';
   drawerOpened: boolean = true;
   panels: any[] = [];
-  selectedPanel: string = 'account';
+  selectedPanel: string = 'add';
   private _unsubscribeAll: Subject<any> = new Subject<any>();
 
-  constructor(private _fuseMediaWatcherService: FuseMediaWatcherService, private _changeDetectorRef: ChangeDetectorRef) { }
+
+
+  constructor(private _fuseMediaWatcherService: FuseMediaWatcherService,
+    private _changeDetectorRef: ChangeDetectorRef,) { }
 
   ngOnInit(): void {
+
+
+
     // Setup available panels
     this.panels = [
+      {
+        id: 'add',
+        icon: 'heroicons_outline:save',
+        title: 'Add a client to system',
+        description: 'Add a client'
+      },
+      {
+        id: 'edit',
+        icon: 'heroicons_outline:pencil',
+        title: 'Edit client details',
+        description: 'Manage your subscription plan, payment method and billing information'
+      },
       {
         id: 'account',
         icon: 'heroicons_outline:user-circle',
         title: 'Account',
         description: 'Manage your public profile and private information'
       },
-      {
-        id: 'security',
-        icon: 'heroicons_outline:lock-closed',
-        title: 'Security',
-        description: 'Manage your password and 2-step verification preferences'
-      },
-      {
-        id: 'plan-billing',
-        icon: 'heroicons_outline:credit-card',
-        title: 'Plan & Billing',
-        description: 'Manage your subscription plan, payment method and billing information'
-      },
-      {
-        id: 'notifications',
-        icon: 'heroicons_outline:bell',
-        title: 'Notifications',
-        description: 'Manage when you\'ll be notified on which channels'
-      },
-      {
-        id: 'team',
-        icon: 'heroicons_outline:user-group',
-        title: 'Team',
-        description: 'Manage your existing team and change roles/permissions'
-      }
+
+
+      // {
+      //   id: 'notifications',
+      //   icon: 'heroicons_outline:bell',
+      //   title: 'Notifications',
+      //   description: 'Manage when you\'ll be notified on which channels'
+      // },
+      // {
+      //   id: 'team',
+      //   icon: 'heroicons_outline:user-group',
+      //   title: 'Team',
+      //   description: 'Manage your existing team and change roles/permissions'
+      // }
     ];
 
     // Subscribe to media changes
@@ -84,9 +93,6 @@ export class ClientsComponent implements OnInit {
     this._unsubscribeAll.complete();
   }
 
-  // -----------------------------------------------------------------------------------------------------
-  // @ Public methods
-  // -----------------------------------------------------------------------------------------------------
 
   /**
    * Navigate to the panel

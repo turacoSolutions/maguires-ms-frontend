@@ -63,26 +63,23 @@
                 <!-- Load settings panel -->
                 <div class="mt-8">
                     <ng-container [ngSwitch]="selectedPanel">
+                        <!-- Add Client -->
+                        <ng-container *ngSwitchCase="'add'">
+                            <app-add-client></app-add-client>
+                        </ng-container>
+
+                        <!-- Edit -->
+                        <ng-container *ngSwitchCase="'edit'">
+                            <app-edit-client></app-edit-client>
+                        </ng-container>
+
                         <!-- Account -->
                         <ng-container *ngSwitchCase="'account'">
                             <settings-account></settings-account>
                         </ng-container>
-                        <!-- Security -->
-                        <ng-container *ngSwitchCase="'security'">
-                            <settings-security></settings-security>
-                        </ng-container>
-                        <!-- Plan & Billing -->
-                        <ng-container *ngSwitchCase="'plan-billing'">
-                            <settings-plan-billing></settings-plan-billing>
-                        </ng-container>
-                        <!-- Notifications -->
-                        <ng-container *ngSwitchCase="'notifications'">
-                            <settings-notifications></settings-notifications>
-                        </ng-container>
-                        <!-- Team -->
-                        <ng-container *ngSwitchCase="'team'">
-                            <settings-team></settings-team>
-                        </ng-container>
+
+
+
                     </ng-container>
                 </div>
 

@@ -7,14 +7,18 @@ import { Client } from '../client';
 @Injectable({
   providedIn: 'root'
 })
-export class ClientServiceService {
+export class ClientService {
 
   private baseUrl = environment.baseUrl + "clients";
 
   constructor(private httpClient: HttpClient) { }
 
   getAllClients(): Observable<Client[]> {
-    return this.httpClient.get<Client[]>(this.baseUrl)
+    return this.httpClient.get<Client[]>(this.baseUrl);
+  }
+
+  addANewClient(newClient: Client): Observable<Client> {
+    return this.httpClient.post<Client>(this.baseUrl, newClient);
   }
 
 }
