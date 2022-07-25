@@ -1,0 +1,99 @@
+<div class="w-full max-w-3xl">
+
+    <!-- Form -->
+    <form [formGroup]="addProductFrom" (ngSubmit)="submitNewProduct()">
+
+        <!-- Section -->
+        <div class="w-full">
+            <div class="text-xl">Product Information</div>
+            <div class="text-secondary">A unique name is required</div>
+        </div>
+        <div class="grid sm:grid-cols-4 gap-6 w-full mt-8">
+
+            <!-- Name -->
+            <div class="sm:col-span-2">
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <mat-label>Name</mat-label>
+                    <mat-icon class="icon-size-5" [svgIcon]="'heroicons_solid:user-circle'" matPrefix></mat-icon>
+                    <input [formControlName]="'name'" matInput>
+                </mat-form-field>
+            </div>
+
+            <!-- Email -->
+            <div class="sm:col-span-2">
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <mat-label>Code</mat-label>
+                    <mat-icon class="icon-size-5" [svgIcon]="'heroicons_solid:view-boards'" matPrefix></mat-icon>
+                    <input [formControlName]="'code'" matInput>
+                </mat-form-field>
+            </div>
+
+            <!-- Email -->
+            <div class="sm:col-span-2">
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <mat-label>Qty Per Pack</mat-label>
+                    <!-- <mat-icon class="icon-size-5" [svgIcon]="'heroicons_solid:annotation'" matPrefix></mat-icon> -->
+                    <input [formControlName]="'qtyPerPack'" matInput>
+                </mat-form-field>
+            </div>
+            <!-- Phone -->
+            <div class="sm:col-span-2">
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <mat-label>UOM</mat-label>
+                    <!-- <mat-icon class="icon-size-5" [svgIcon]="'heroicons_solid:adjustments'" matPrefix></mat-icon> -->
+                    <input [formControlName]="'uom'" matInput>
+                </mat-form-field>
+            </div>
+
+            <div class="sm:col-span-2">
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <mat-label>Spec</mat-label>
+                    <mat-icon class="icon-size-5" [svgIcon]="'heroicons_solid:annotation'" matPrefix></mat-icon>
+                    <input [formControlName]="'spec'" matInput>
+                </mat-form-field>
+            </div>
+
+            <div class="mt-11 mb-10 "></div>
+
+            <div class="sm:col-span-2">
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <mat-label>Category</mat-label>
+                    <mat-select [placeholder]="'Category'">
+                        <mat-option value="country-1" *ngFor="let cat of categories">{{cat}}</mat-option>
+                        <!-- <mat-option value="country-2">Country 2</mat-option>
+                        <mat-option value="country-3">Country 3</mat-option> -->
+                    </mat-select>
+                    <!-- <mat-icon class="icon-size-5" matPrefix [svgIcon]="'heroicons_solid:location-marker'"></mat-icon> -->
+                </mat-form-field>
+
+            </div>
+
+            <div class="sm:col-span-2">
+                <mat-form-field class="fuse-mat-no-subscript w-full">
+                    <mat-label>Subcategory</mat-label>
+                    <mat-select [placeholder]="'Category'">
+                        <mat-option value="country-1" *ngFor="let subcat of subcategories">{{subcat}}</mat-option>
+                        <!-- <mat-option value="country-2">Country 2</mat-option>
+                        <mat-option value="country-3">Country 3</mat-option> -->
+                    </mat-select>
+                    <!-- <mat-icon class="icon-size-5" matPrefix [svgIcon]="'heroicons_solid:location-marker'"></mat-icon> -->
+                </mat-form-field>
+
+            </div>
+        </div>
+
+        <!-- Divider -->
+        <div class="mt-11 mb-10 border-t"></div>
+
+        <!-- Actions -->
+        <div class="flex items-center justify-end">
+            <button class="mr-4" mat-flat-button type="submit" [color]="'primary'">Submit
+            </button>
+
+            <button mat-flat-button type="button" [color]="'warn'" (click)="cancel()">
+                Cancel
+            </button>
+        </div>
+    </form>
+
+</div>

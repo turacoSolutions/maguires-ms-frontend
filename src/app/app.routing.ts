@@ -89,7 +89,7 @@ export const appRoutes: Route[] = [
             {
                 path: 'apps', children: [
                     { path: 'academy', loadChildren: () => import('app/modules/admin/apps/academy/academy.module').then(m => m.AcademyModule) },
-                    { path: 'clients', loadChildren: () => import('app/modules/admin/apps/clients/clients.module').then(m => m.ClientsModule) },
+                    { path: 'clients', loadChildren: () => import('app/modules/admin/clients/clients.module').then(m => m.ClientsModule) },
                     { path: 'chat', loadChildren: () => import('app/modules/admin/apps/chat/chat.module').then(m => m.ChatModule) },
                     { path: 'contacts', loadChildren: () => import('app/modules/admin/apps/contacts/contacts.module').then(m => m.ContactsModule) },
                     { path: 'ecommerce', loadChildren: () => import('app/modules/admin/apps/ecommerce/ecommerce.module').then(m => m.ECommerceModule) },
@@ -99,6 +99,21 @@ export const appRoutes: Route[] = [
                     { path: 'notes', loadChildren: () => import('app/modules/admin/apps/notes/notes.module').then(m => m.NotesModule) },
                     { path: 'scrumboard', loadChildren: () => import('app/modules/admin/apps/scrumboard/scrumboard.module').then(m => m.ScrumboardModule) },
                     { path: 'tasks', loadChildren: () => import('app/modules/admin/apps/tasks/tasks.module').then(m => m.TasksModule) },
+                ]
+            },
+            {
+                path: 'clients', children: [
+                    { path: '', loadChildren: () => import('app/modules/admin/clients/clients.module').then(m => m.ClientsModule) },
+                ]
+            },
+            {
+                path: 'products', children: [
+                    { path: '', loadChildren: () => import('app/modules/admin/products/products.module').then(m => m.ProductsModule) },
+                ]
+            },
+            {
+                path: 'categories', children: [
+                    { path: '', loadChildren: () => import('app/modules/admin/categories/categories.module').then(m => m.CategoriesModule) },
                 ]
             },
 

@@ -1,7 +1,5 @@
 import { Route } from "@angular/router";
-import { AddClientComponent } from "./add-client/add-client.component";
 import { ClientsComponent } from "./clients.component";
-import { EditClientComponent } from "./edit-client/edit-client.component";
 import { ListOfClientsComponent } from "./list-of-clients/list-of-clients.component";
 
 

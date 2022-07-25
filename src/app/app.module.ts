@@ -12,6 +12,8 @@ import { mockApiServices } from 'app/mock-api';
 import { LayoutModule } from 'app/layout/layout.module';
 import { AppComponent } from 'app/app.component';
 import { appRoutes } from 'app/app.routing';
+import { ProductsComponent } from './modules/admin/products/products.component';
+import { CategoriesComponent } from './modules/admin/categories/categories.component';
 
 
 const routerConfig: ExtraOptions = {
@@ -22,6 +24,8 @@ const routerConfig: ExtraOptions = {
 @NgModule({
     declarations: [
         AppComponent,
+        // ProductsComponent,
+        // CategoriesComponent,
 
     ],
     imports: [

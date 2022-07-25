@@ -39,7 +39,6 @@ export const defaultNavigation: FuseNavigationItem[] = [
             }
         ]
     },
-
     {
         id: 'clients',
         title: 'Clients',
@@ -52,7 +51,7 @@ export const defaultNavigation: FuseNavigationItem[] = [
                 title: 'List',
                 type: 'basic',
                 icon: 'heroicons_outline:academic-cap',
-                link: '/apps/clients/list'
+                link: '/clients/list'
             },
             // {
             //     id: 'clients.add',
@@ -66,7 +65,67 @@ export const defaultNavigation: FuseNavigationItem[] = [
                 title: 'Edit',
                 type: 'basic',
                 icon: 'heroicons_outline:pencil-alt',
-                link: '/apps/clients/edit'
+                link: '/clients/edit'
+            },
+        ]
+    },
+    {
+        id: 'categories',
+        title: 'Categories',
+        subtitle: 'Categories info',
+        type: 'group',
+        icon: 'heroicons_outline:user-group',
+        children: [
+            {
+                id: 'categories.list',
+                title: 'List',
+                type: 'basic',
+                icon: 'heroicons_outline:academic-cap',
+                link: '/categories/list'
+            },
+            // {
+            //     id: 'clients.add',
+            //     title: 'Add',
+            //     type: 'basic',
+            //     icon: 'heroicons_outline:user-circle',
+            //     link: '/apps/clients/add'
+            // },
+            {
+                id: 'categories.edit',
+                title: 'Edit',
+                type: 'basic',
+                icon: 'heroicons_outline:pencil-alt',
+                link: '/categories/edit'
+            },
+        ]
+    },
+    {
+        id: 'products',
+        title: 'Products',
+        subtitle: 'Product info',
+        type: 'group',
+        icon: 'heroicons_outline:user-group',
+        children: [
+            {
+                id: 'products.list',
+                title: 'List',
+                type: 'basic',
+                icon: 'heroicons_outline:academic-cap',
+                link: '/products/list'
+            },
+            // {
+            //     id: 'clients.add',
+            //     title: 'Add',
+            //     type: 'basic',
+            //     icon: 'heroicons_outline:user-circle',
+            //     link: '/apps/clients/add'
+            // },
+            {
+                id: 'products.edit',
+                title: 'Edit',
+                type: 'basic',
+                icon: 'heroicons_outline:pencil-alt',
+                link: '/products/edit'
             },
         ]
     },
@@ -1181,7 +1240,15 @@ export const compactNavigation: FuseNavigationItem[] = [
     {
         id: 'clients',
         title: 'Clients',
-        tooltip: 'Dashboards',
+        tooltip: 'Clients',
+        type: 'aside',
+        icon: 'heroicons_outline:user-group',
+        children: [] // This will be filled from defaultNavigation so we don't have to manage multiple sets of the same navigation
+    },
+    {
+        id: 'categories',
+        title: 'Categories',
+        tooltip: 'Categories',
         type: 'aside',
         icon: 'heroicons_outline:user-group',
         children: [] // This will be filled from defaultNavigation so we don't have to manage multiple sets of the same navigation
@@ -1192,6 +1259,14 @@ export const compactNavigation: FuseNavigationItem[] = [
         tooltip: 'Apps',
         type: 'aside',
         icon: 'heroicons_outline:qrcode',
+        children: [] // This will be filled from defaultNavigation so we don't have to manage multiple sets of the same navigation
+    },
+    {
+        id: 'products',
+        title: 'Products',
+        tooltip: 'Products',
+        type: 'aside',
+        icon: 'heroicons_outline:user-group',
         children: [] // This will be filled from defaultNavigation so we don't have to manage multiple sets of the same navigation
     },
     {

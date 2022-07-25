@@ -1,5 +1,4 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
-import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { MatDrawer } from '@angular/material/sidenav';
 
 import { FuseMediaWatcherService } from '@fuse/services/media-watcher';
